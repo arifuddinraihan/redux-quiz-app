@@ -2,7 +2,7 @@ import { Select, Option } from "@material-tailwind/react";
 
 export function SelectModule() {
   return (
-    <div className="w-72">
+    <div className="w-72 my-4">
       <Select placeholder={""} label="Select Module">
         <Option>Material Tailwind HTML</Option>
         <Option>Material Tailwind React</Option>
