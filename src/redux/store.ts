@@ -1,12 +1,18 @@
 import { configureStore } from "@reduxjs/toolkit";
 import quizReducer from "./features/quiz/quizSlice";
+import moduleReducer from "./features/module/moduleSlice";
 import stepperReducer from "./features/stepper/stepperSlice";
+import { baseApi } from "./api/baseApi";
 
 export const store = configureStore({
   reducer: {
+    [baseApi.reducerPath]: baseApi.reducer,
     quiz: quizReducer,
+    module: moduleReducer,
     stepper: stepperReducer,
   },
+  middleware: (getDefaultMiddlewares) =>
+    getDefaultMiddlewares().concat(baseApi.middleware),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

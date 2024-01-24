@@ -4,7 +4,7 @@ const moduleApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getAllModules: builder.query({
       query: () => ({
-        url: "",
+        url: "/module",
         method: "GET",
       }),
     }),
